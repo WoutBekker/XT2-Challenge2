@@ -13,7 +13,13 @@
 	<body onload="startClock()">
 		<div class="clock">
 			<div class="dayphases">
-				<span id="image">image</span>
+				<div class="image" id="night"><img  src="images/night.svg"></div>
+				<div class="image" id="morning"><img src="images/morning.svg"></div>
+				<div class="image" id="noon"><img src="images/noon.svg"></div>
+				<div class="image" id="afternoon"><img src="images/afternoon.svg"></div>
+				<div class="image" id="evening"><img src="images/evening.svg"></div>
+			</div>
+			<div class="dayphasestext">
 				<span id="phase">Noon</span>
 			</div>
 			<div class="time">
@@ -40,8 +46,8 @@
 					min = time.getMinutes(),
 					sec = time.getSeconds(),
 					AMPMvar = "",
-					phasevar = "",
-					imgvar = "";
+					phasevar = "";
+					
 
 
 
@@ -60,27 +66,27 @@
 
 				if(AMPMvar == "AM" && hr == 12 || hr < 6){
 					phasevar = "Night";
-					
+					document.getElementById("night").style.visibility = "visible";
 					
 				}
 				if(AMPMvar == "AM" && hr >= 6 && hr < 12){
 					phasevar = "Morning";
-					
+					document.getElementById("morning").style.visibility = "visible";
 					
 				}
 				if(AMPMvar == "PM" && hr == 12 || hr < 3){
 					phasevar = "Noon";
-					
+					document.getElementById("noon").style.visibility = "visible";
 					
 				}
 				if(AMPMvar == "PM" && hr >= 3 && hr < 6){
 					phasevar = "Afternoon";
-					imgvar= 'images/afternoon.svg';
+					document.getElementById("afternoon").style.visibility = "visible";
 					
 				}
 				if(AMPMvar == "PM" && hr >= 6 && hr < 12 ){
 					phasevar = "Evening";
-					
+					document.getElementById("evening").style.visibility = "visible";
 					
 				}
 
@@ -91,8 +97,8 @@
 
 				var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-				var ids = ["day", "month", "number", "year", "hour", "minutes", "seconds", "AMPM", "phase", "image"];
-				var variables = [days[dname], months[mo], num.pad(2), yr, hr.pad(2), min.pad(2), sec.pad(2), AMPMvar, phasevar, imgvar];
+				var ids = ["day", "month", "number", "year", "hour", "minutes", "seconds", "AMPM", "phase"];
+				var variables = [days[dname], months[mo], num.pad(2), yr, hr.pad(2), min.pad(2), sec.pad(2), AMPMvar, phasevar];
 
 				for(var i=0; i < ids.length; i++)
 				document.getElementById(ids[i]).firstChild.nodeValue = variables[i];

@@ -5,7 +5,7 @@
 body{
 	background-color: #102640;
 	font-family: 'Montserrat', sans-serif;
-  	overflow: hidden;
+  	/*overflow: hidden;*/
 	color: white;
 	display: flex;
 	height: 100vh;
@@ -22,6 +22,7 @@ body{
 	padding: 20px 20px;
 	border-radius: 25px;
 	box-shadow: 0 3 6 #000000;
+
 }
 .date{
 	font-size: 15px;
@@ -46,13 +47,55 @@ body{
 	text-align: center;
 	letter-spacing: 4px;
 	font-size: 15px;
+	display: grid;
+	grid-template: 1fr / 1fr;
+	place-items: center;
 }
-#image{
+
+.dayphasestext{
+	text-align: center;
+	letter-spacing: 4px;
+	font-size: 15px;
+}
+.dayphases > *{
+	grid-column: 1 / 1;
+	grid-row:  1 / 1;
+}
+
+.image{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 15%;
+	margin: 20%;
+}
 
+#night{
+	position: relative;
+	width: 50%;
+	visibility: hidden;
+}
+#morning{
+	position: relative;
+	width: 10%;
+	visibility: hidden;
+}
+#noon{
+	position: relative;
+	width: 50%;	
+	visibility: hidden;
+	
+}
+#afternoon{
+	position: relative;
+	width: 10%;
+	visibility: hidden;
+	
+}
+#evening{
+	position: relative;
+	width: 50%;
+	visibility: hidden;
+	
 }
 /*End Phone*/
 
@@ -69,7 +112,7 @@ body{
 .time{
 	font-size: 50px;
 }
-.dayphases{
+.dayphasestext{
 	font-size: 15px;
 }
 #image{
@@ -93,7 +136,7 @@ body{
 .time{
 	font-size: 60px;
 }
-.dayphases{
+.dayphasestext{
 	font-size: 20px;
 }
 #image{
@@ -116,7 +159,7 @@ body{
 .time{
 	font-size: 70px;
 }
-.dayphases{
+.dayphasestext{
 	font-size: 30px;
 }
 #image{
