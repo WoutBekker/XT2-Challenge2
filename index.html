@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Time</title>
+		<link type="text/css" href="Time.css" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+	</head>
+	<body onload="startClock()">
+		<div class="clock">
+			<div class="dayphases">
+				<span id="image">image</span>
+				<span id="phase">Noon</span>
+			</div>
+			<div class="time">
+				<span id="hour">00</span>:
+				<span id="minutes">00</span>:
+				<span id="seconds">00</span>
+				<span id="AMPM">AM</span>
+			</div>
+			<div class="date">
+				<span id="day">Day</span>,
+				<span id="month">Month</span>
+				<span id="number">00</span>,
+				<span id="year">year</span>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function updateClock(){
+				var time = new Date();
+				var dname = time.getDay(),
+					mo = time.getMonth(),
+					num = time.getDate(),
+					yr = time.getFullYear(),
+					hr = time.getHours(),
+					min = time.getMinutes(),
+					sec = time.getSeconds(),
+					AMPMvar = "",
+					phasevar = "",
+					imgvar = "";
+
+
+
+				if(hr < 12){
+					AMPMvar = "AM";
+				}
+				else{
+					AMPMvar = "PM";
+				}
+				if(hr == 0){
+					hr = 12;
+				}
+				if(hr > 12){
+					hr = hr - 12;
+				}
+
+				if(AMPMvar == "AM" && hr == 12 || hr < 6){
+					phasevar = "Night";
+					
+					
+				}
+				if(AMPMvar == "AM" && hr >= 6 && hr < 12){
+					phasevar = "Morning";
+					
+					
+				}
+				if(AMPMvar == "PM" && hr == 12 || hr < 3){
+					phasevar = "Noon";
+					
+					
+				}
+				if(AMPMvar == "PM" && hr >= 3 && hr < 6){
+					phasevar = "Afternoon";
+					imgvar= 'images/afternoon.svg';
+					
+				}
+				if(AMPMvar == "PM" && hr >= 6 && hr < 12 ){
+					phasevar = "Evening";
+					
+					
+				}
+
+				Number.prototype.pad = function(digits){
+					for(var n = this.toString(); n.length < digits; n = 0 + n);
+					return n;
+				}
+
+				var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+				var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+				var ids = ["day", "month", "number", "year", "hour", "minutes", "seconds", "AMPM", "phase", "image"];
+				var variables = [days[dname], months[mo], num.pad(2), yr, hr.pad(2), min.pad(2), sec.pad(2), AMPMvar, phasevar, imgvar];
+
+				for(var i=0; i < ids.length; i++)
+				document.getElementById(ids[i]).firstChild.nodeValue = variables[i];
+
+
+
+			}
+			function startClock(){
+				updateClock();
+				window.setInterval("updateClock()", 1);
+			}
+		</script>
+	</body>
+</html>
