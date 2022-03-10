@@ -65,27 +65,47 @@
 				}
 
 				if(AMPMvar == "AM" && hr == 12 || hr < 6){
-					phasevar = "Night";
+					phasevar = "Goodnight";
 					document.getElementById("night").style.visibility = "visible";
+					document.getElementById("morning").style.visibility = "hidden";
+					document.getElementById("noon").style.visibility = "hidden";
+					document.getElementById("afternoon").style.visibility = "hidden";
+					document.getElementById("evening").style.visibility = "hidden";
 					
 				}
 				if(AMPMvar == "AM" && hr >= 6 && hr < 12){
-					phasevar = "Morning";
+					phasevar = "Goodmorning!";
+					document.getElementById("night").style.visibility = "hidden";
 					document.getElementById("morning").style.visibility = "visible";
+					document.getElementById("noon").style.visibility = "hidden";
+					document.getElementById("afternoon").style.visibility = "hidden";
+					document.getElementById("evening").style.visibility = "hidden";
 					
 				}
 				if(AMPMvar == "PM" && hr == 12 || hr < 3){
-					phasevar = "Noon";
+					phasevar = "It is noon";
+					document.getElementById("night").style.visibility = "hidden";
+					document.getElementById("morning").style.visibility = "hidden";
 					document.getElementById("noon").style.visibility = "visible";
+					document.getElementById("afternoon").style.visibility = "hidden";
+					document.getElementById("evening").style.visibility = "hidden";
 					
 				}
 				if(AMPMvar == "PM" && hr >= 3 && hr < 6){
-					phasevar = "Afternoon";
+					phasevar = "Have a great afternoon!";
+					document.getElementById("night").style.visibility = "hidden";
+					document.getElementById("morning").style.visibility = "hidden";
+					document.getElementById("noon").style.visibility = "hidden";
 					document.getElementById("afternoon").style.visibility = "visible";
+					document.getElementById("evening").style.visibility = "hidden";
 					
 				}
 				if(AMPMvar == "PM" && hr >= 6 && hr < 12 ){
-					phasevar = "Evening";
+					phasevar = "Have a nice evening!";
+					document.getElementById("night").style.visibility = "hidden";
+					document.getElementById("morning").style.visibility = "hidden";
+					document.getElementById("noon").style.visibility = "hidden";
+					document.getElementById("afternoon").style.visibility = "hidden";
 					document.getElementById("evening").style.visibility = "visible";
 					
 				}
