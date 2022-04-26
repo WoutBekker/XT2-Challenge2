@@ -70,6 +70,7 @@ body{
 	justify-content: center;
 	height: 60%;
 	
+<<<<<<< HEAD
 }
 #noon{
 	animation-name: spin;
@@ -98,6 +99,8 @@ body{
     to {
         transform:rotate(360deg);
     }
+=======
+>>>>>>> 435aa4fc996fc9dac0e3041870399f8afb25af58
 }
 
 
@@ -172,6 +175,7 @@ body{
 }
 .image{
 	height: 80%;
+<<<<<<< HEAD
 }
 #noon{
 	animation-name: spin;
@@ -200,6 +204,9 @@ body{
     to {
         transform:rotate(360deg);
     }
+=======
+
+>>>>>>> 435aa4fc996fc9dac0e3041870399f8afb25af58
 }
 }
 /* End Small desktop */
@@ -222,7 +229,10 @@ body{
 }
 .image{
 	height: 90%;
+<<<<<<< HEAD
 }
+=======
+>>>>>>> 435aa4fc996fc9dac0e3041870399f8afb25af58
 
 #noon{
 	animation-name: spin;
