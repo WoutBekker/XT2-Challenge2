@@ -124,6 +124,7 @@ body{
 }
 .image{
 	height: 75%;
+<<<<<<< HEAD
 }
 #noon{
 	animation-name: spin;
@@ -152,6 +153,9 @@ body{
     to {
         transform:rotate(360deg);
     }
+=======
+
+>>>>>>> 435aa4fc996fc9dac0e3041870399f8afb25af58
 }
 }
 /*End Tablet*/
